@@ -1,10 +1,25 @@
-const assert = require('assert');
+cconst assert = require('assert');
 
 function countBatteriesByHealth(presentCapacities) {
+  let healthy=0;
+  let exchange=0
+    let failed=0
+
+ for(let i=0;i<presentCapacities.length;i++){
+if((100*presentCapacities[i]/120)>80){
+healthy++
+}
+else if((100*presentCapacities[i]/120)<=80&&(100*presentCapacities[i]/120)>63){
+  exchange++
+}
+else{
+  failed++
+}
+ }
   return {
-    healthy: 0,
-    exchange: 0,
-    failed: 0
+    healthy,
+    exchange,
+    failed,
   };
 }
 
